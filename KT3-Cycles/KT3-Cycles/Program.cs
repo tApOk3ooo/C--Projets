@@ -156,6 +156,24 @@ namespace KT3_Cycles
                 {
                     InputException();
                 }
+
+                Spliter();
+
+                Console.WriteLine("Введите вторую цифру, до которой задаётся дипаозон чисел");
+
+                string task3SecondValueOfRangeRaw = Console.ReadLine();
+
+                if (!int.TryParse(task3SecondValueOfRangeRaw, out int task3SecondValueOfRangeCorrect))
+                {
+                    InputException();
+                }
+
+                int localI;
+
+                for (int i = task3FirstValueOfRangeCorrect; i < task3SecondValueOfRangeCorrect; i++)
+                {
+                }
+
             }
 
             void Task3Complete()
@@ -167,10 +185,15 @@ namespace KT3_Cycles
                 Console.WriteLine("Доказательство гипотезы Сиракуз");
 
                 Spliter();
+
+                Task3HypothesisProof();
+
+                Spliter();
             }
 
             //Task1Complete();
             //Task2Complete();
+            Task3Complete();
         }
     }
 }
