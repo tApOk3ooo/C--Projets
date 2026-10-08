@@ -168,9 +168,59 @@ namespace KT3_Cycles
                     InputException();
                 }
 
-                for (int i = task3FirstValueOfRangeCorrect; i < task3SecondValueOfRangeCorrect; i++)
+                int result;
+
+                if (task3FirstValueOfRangeCorrect != 0 && task3SecondValueOfRangeCorrect != 0 &&
+                    task3FirstValueOfRangeCorrect != 1 && task3SecondValueOfRangeCorrect != 1)
                 {
+                    for (int i = task3FirstValueOfRangeCorrect; i < task3SecondValueOfRangeCorrect; i++)
+                    {
+                        bool isNotProve = true;
+
+                        int currentNumber = i;
+
+                        while (isNotProve)
+                        {
+                            if (currentNumber % 2 == 0)
+                            {
+                                result = currentNumber / 2;
+
+                                Spliter();
+
+                                Console.WriteLine($"{currentNumber} / 2 = {result}");
+
+                                if (result <= 1)
+                                {
+                                    isNotProve = false;
+
+                                    Spliter();
+                                }
+                                else
+                                {
+                                    currentNumber = result;
+                                }
+                            }
+                            else if (currentNumber % 2 == 1)
+                            {
+                                result = ((currentNumber * 3) + 1) / 2;
+                                Spliter();
+                                Console.WriteLine($"{currentNumber} * 3 + 1 / 2 = {result}");
+
+                                if (result <= 1)
+                                {
+                                    isNotProve = false;
+
+                                    Spliter();
+                                }
+                                else
+                                {
+                                    currentNumber = result;
+                                }
+                            }
+                        }
+                    }
                 }
+
 
             }
 
@@ -189,18 +239,45 @@ namespace KT3_Cycles
                 Spliter();
             }
 
+            void Task4SerachAllPerfectNumbers()
+            {
+                for (int currentNumber = 2; currentNumber < 10000; currentNumber++)
+                {
+                    int sum = 0;
+
+                    for (int i = 1; i <= currentNumber / 2; i++)
+                    {
+                        if (currentNumber % i == 0)
+                        {
+                            sum += i;
+                        }
+                    }
+
+                    if (sum == currentNumber)
+                    {
+                        Console.WriteLine($"{currentNumber} - это совершенное число");
+                    }
+                }
+            }
             void Task4Complete()
             {
-                Console.WriteLine("");
+                Console.WriteLine("Задание 4");
 
                 Spliter();
 
-                Console.WriteLine();
+                Console.WriteLine("Находит все совершенные числа в диапозоне от 1 до 10000");
+
+                Spliter();
+
+                Task4SerachAllPerfectNumbers();
+
+                Spliter();
             }
 
             //Task1Complete();
             //Task2Complete();
-            Task3Complete();
+            //Task3Complete();
+            //Task4Complete();
         }
     }
 }
