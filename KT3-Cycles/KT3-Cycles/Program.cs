@@ -168,8 +168,6 @@ namespace KT3_Cycles
                     InputException();
                 }
 
-                int localI;
-
                 for (int i = task3FirstValueOfRangeCorrect; i < task3SecondValueOfRangeCorrect; i++)
                 {
                 }
@@ -189,6 +187,15 @@ namespace KT3_Cycles
                 Task3HypothesisProof();
 
                 Spliter();
+            }
+
+            void Task4Complete()
+            {
+                Console.WriteLine("");
+
+                Spliter();
+
+                Console.WriteLine();
             }
 
             //Task1Complete();
