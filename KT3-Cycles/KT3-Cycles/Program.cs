@@ -259,6 +259,7 @@ namespace KT3_Cycles
                     }
                 }
             }
+
             void Task4Complete()
             {
                 Console.WriteLine("Задание 4");
@@ -274,10 +275,33 @@ namespace KT3_Cycles
                 Spliter();
             }
 
+            void Task5quareConstruct()
+            {
+                char startAndEndSymbol = '-';
+                char strokeSymbol = '|';
+                char squareSymbol = '0';
+
+                int squareLines = 8;
+
+                int width = 20;
+
+                StringBuilder stringBuilder = new StringBuilder();
+
+
+            }
+
+            void Task5Complete()
+            {
+                Console.WriteLine("Задание 5");
+
+                Console.WriteLine("Вывод на экран прямоуголника из символов");
+            }
+
             //Task1Complete();
             //Task2Complete();
             //Task3Complete();
             //Task4Complete();
+
         }
     }
 }
