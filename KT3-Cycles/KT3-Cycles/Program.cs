@@ -283,24 +283,146 @@ namespace KT3_Cycles
 
                 int squareLines = 8;
 
+                int squareColumn = 18;
+
                 int width = 20;
 
                 StringBuilder stringBuilder = new StringBuilder();
 
+                stringBuilder.Append(startAndEndSymbol, width);
 
+                string startAndEndString = stringBuilder.ToString();
+
+                Console.WriteLine(startAndEndString);
+
+                stringBuilder.Clear();
+
+                stringBuilder.Append(squareSymbol, squareColumn);
+
+                stringBuilder.Insert(0, strokeSymbol);
+
+                stringBuilder.Append(strokeSymbol);
+
+                string squreString = stringBuilder.ToString();
+
+                Spliter();
+
+                for (int i = 0; i < squareLines; i++)
+                {
+                    Console.WriteLine(squreString);
+
+                    Spliter();
+                }
+
+                stringBuilder.Clear();
+
+                stringBuilder.Append(startAndEndSymbol, width);
+
+                Console.WriteLine(startAndEndString);
             }
 
             void Task5Complete()
             {
                 Console.WriteLine("Задание 5");
 
+                Spliter();
+
                 Console.WriteLine("Вывод на экран прямоуголника из символов");
+
+                Spliter();
+
+                Task5quareConstruct();
+            }
+
+            void Task6ChristmasTree()
+            {
+                Console.WriteLine("Введите число до которого будет строиться ёлочка:");
+
+                string treeValueRaw = Console.ReadLine();
+
+                if (!int.TryParse(treeValueRaw, out int treeValueCorrect))
+                {
+                    InputException();
+                }
+
+                Spliter();
+
+                int currentNumber = 1;
+                int lineLenght = 1;
+
+                while (currentNumber <= treeValueCorrect)
+                {
+                    for (int i = 0; i < lineLenght && currentNumber <= treeValueCorrect; i++)
+                    {
+                            Console.Write(currentNumber + " ");
+                            currentNumber++;
+                    }
+
+                    Console.WriteLine();
+                    lineLenght++;
+                }
+            }
+
+            void Task6Complete()
+            {
+                Console.WriteLine("Задание 6");
+
+                Spliter();
+
+                Console.WriteLine("Выдаёт арт ёлочки из цифр от 1 до числа пользователя");
+
+                Spliter();
+
+                Task6ChristmasTree();
+            }
+
+            void Task7Vave()
+            {
+                Console.WriteLine("Введите число до которого будет строиться волна:");
+
+                string vaveValueRaw = Console.ReadLine();
+
+                if (!int.TryParse(vaveValueRaw, out int vaveValueCorrect))
+                {
+                    InputException();
+                }
+
+                Spliter();
+
+                int currentNumber = 1;
+                int lineLenght = 1;
+
+                while (currentNumber <= vaveValueCorrect)
+                {
+                    for (int i = 0; i < lineLenght && currentNumber <= vaveValueCorrect; i++)
+                    {
+                        Console.Write(currentNumber + " ");
+                        currentNumber++;
+                    }
+
+                    Console.WriteLine();
+                    lineLenght++;
+                }
+            }
+
+            void Task7Complete()
+            {
+                Console.WriteLine("Задание 7");
+
+                Spliter();
+
+                Console.WriteLine("Выводит волны от 1 до числа пользователя");
+
+                Spliter();
             }
 
             //Task1Complete();
             //Task2Complete();
             //Task3Complete();
             //Task4Complete();
+            //Task5Complete();
+            Task6Complete();
+
 
         }
     }
