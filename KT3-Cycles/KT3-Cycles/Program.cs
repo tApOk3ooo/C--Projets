@@ -332,6 +332,8 @@ namespace KT3_Cycles
                 Spliter();
 
                 Task5quareConstruct();
+
+                Spliter();
             }
 
             void Task6ChristmasTree()
@@ -374,15 +376,17 @@ namespace KT3_Cycles
                 Spliter();
 
                 Task6ChristmasTree();
+
+                Spliter();
             }
 
-            void Task7Vave()
+            void Task7Wave()
             {
                 Console.WriteLine("Введите число до которого будет строиться волна:");
 
-                string vaveValueRaw = Console.ReadLine();
+                string waveValueRaw = Console.ReadLine();
 
-                if (!int.TryParse(vaveValueRaw, out int vaveValueCorrect))
+                if (!int.TryParse(waveValueRaw, out int waveValueCorrect))
                 {
                     InputException();
                 }
@@ -390,18 +394,32 @@ namespace KT3_Cycles
                 Spliter();
 
                 int currentNumber = 1;
-                int lineLenght = 1;
 
-                while (currentNumber <= vaveValueCorrect)
+                Console.WriteLine(currentNumber++);
+
+                int currentPeak = 2;
+
+                while (currentNumber <= waveValueCorrect)
                 {
-                    for (int i = 0; i < lineLenght && currentNumber <= vaveValueCorrect; i++)
+                    for (int len = 2; len <= currentPeak && currentNumber <= waveValueCorrect; len++)
                     {
-                        Console.Write(currentNumber + " ");
-                        currentNumber++;
+                        for (int a = 0; a < len && currentNumber <= waveValueCorrect; a++)
+                        {
+                            Console.Write(currentNumber++ + " ");
+                        }
+                        Console.WriteLine();
                     }
 
-                    Console.WriteLine();
-                    lineLenght++;
+                    for (int len = currentPeak - 1; len >= 1 && currentNumber <= waveValueCorrect; len--)
+                    {
+                        for (int a = 0; a < len && currentNumber <= waveValueCorrect; a++)
+                        {
+                            Console.Write(currentNumber++ + " ");
+                        }
+                        Console.WriteLine();
+                    }
+
+                    currentPeak++;
                 }
             }
 
@@ -414,14 +432,74 @@ namespace KT3_Cycles
                 Console.WriteLine("Выводит волны от 1 до числа пользователя");
 
                 Spliter();
+
+                Task7Wave();
+
+                Spliter();
+            }
+
+            void Task8Initials()
+            {
+                Console.WriteLine("Введите имя и отчество в формате - Имя Отчество");
+
+                string initials = Console.ReadLine();
+
+
+                if (string.IsNullOrEmpty(initials))
+                {
+                    InputException();
+                }
+
+
+                int spaceIndex = initials.IndexOf(' ');
+
+
+                if (spaceIndex <= 0)
+                {
+                    Console.WriteLine("Вы ввели не по шаблону!");
+                }
+
+                char firstInitial = char.ToUpper(initials[0]);
+
+                char secondInitial = char.ToUpper(initials[spaceIndex + 1]);
+
+                StringBuilder stringBuilder = new StringBuilder();
+                stringBuilder.Append(firstInitial);
+                stringBuilder.Append('.');
+                stringBuilder.Append(secondInitial);
+                stringBuilder.Append('.');
+
+                string nameResult = stringBuilder.ToString();
+
+                Spliter();
+
+                Console.WriteLine(nameResult);
+
+            }
+
+            void Task8Complete()
+            {
+                Console.WriteLine("Задание 8");
+
+                Spliter();
+
+                Console.WriteLine("Выводит иницалы имени и фамилии");
+
+                Spliter();
+
+                Task8Initials();
+
+                Spliter();
             }
 
             //Task1Complete();
             //Task2Complete();
             //Task3Complete();
             //Task4Complete();
-            //Task5Complete();
+            Task5Complete();
             Task6Complete();
+            Task7Complete();
+            Task8Complete();
 
 
         }
