@@ -27,7 +27,7 @@ namespace KT4_Arrays
 
             void Task1FillArrayRoutine()
             {
-                Task1ArrayLenghtInput();
+                //Task1ArrayLenghtInput();
 
                 Task1ArrayFillInput();
 
@@ -48,18 +48,18 @@ namespace KT4_Arrays
 
             void Task1ArrayFillInput()
             {
-                 
+                int[] task1Array = new int[Task1ArrayLenghtInput()];
 
                 foreach (var item in task1Array)
                 {
                     Console.WriteLine("Введите число для индекса: " + item);
 
-                    if(int.TryParse(Console.ReadLine(), out int fillNumber))
+                    if(!int.TryParse(Console.ReadLine(), out int fillNumber))
                     {
                         InputException();
                     }
 
-                    task1Array[item] = fillNumber; 
+                    task1Array[item] = fillNumber;
                 }
             }
 
