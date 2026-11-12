@@ -45,7 +45,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Program.cs" />
+    <Compile Include="SystemMethods.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Task1FillArray.cs" />
+    <Compile Include="Task2FillArrayFromUserInput.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
