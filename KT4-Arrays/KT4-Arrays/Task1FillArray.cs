@@ -8,11 +8,12 @@ namespace KT4_Arrays
 {
     internal class Task1FillArray : SystemMethods
     {
-        private void Task1Routine()
+        private void Routine()
         {
             int arrayLength= LengthInput();
-            int[] userArray = FillInput(arrayLength);
-            ArrayOutput(userArray);
+            int[] userArray = Create(arrayLength);
+            FillInput(userArray);
+            Output(userArray);
         }
 
         private int LengthInput()
@@ -20,7 +21,7 @@ namespace KT4_Arrays
             Console.WriteLine("Введите длинну массива");
 
             int arrayLength;
-            while (!int.TryParse(Console.ReadLine(), out arrayLength) || arrayLength<= 0)
+            while (!int.TryParse(Console.ReadLine(), out arrayLength) || arrayLength <= 0)
             {
                 InputException();
             }
@@ -30,11 +31,16 @@ namespace KT4_Arrays
             return arrayLength;
         }
 
-        private int[] FillInput(int arrayLength)
+        private int[] Create(int arrayLength)
         {
-            int[] _task1Array = new int[arrayLength];
+            int[] userArray = new int[arrayLength];
 
-            for (int i = 0; i < _task1Array.Length; i++)
+            return userArray;
+        }
+
+        private int[] FillInput(int[] userArray)
+        {
+            for (int i = 0; i < userArray.Length; i++)
             {
                 Console.WriteLine($"Введите число для индекса {i}: ");
 
@@ -47,22 +53,22 @@ namespace KT4_Arrays
 
                 Spliter();
 
-                _task1Array[i] = fillNumber;
+                userArray[i] = fillNumber;
             }
 
-            return _task1Array;
+            return userArray;
         }
 
-        private void ArrayOutput(int[] _task1Array)
+        private void Output(int[] userArray)
         {
             Spliter();
 
-            int _arrayIndex = -1;
+            int arrayIndex = -1;
 
-            foreach (var item in _task1Array)
+            foreach (var item in userArray)
             {
-                _arrayIndex++;
-                Console.WriteLine($"Значение в массиве под индексом [{_arrayIndex}]: " + item);
+                arrayIndex++;
+                Console.WriteLine($"Значение в массиве под индексом [{arrayIndex}]: " + item);
             }
 
             Spliter();
@@ -78,7 +84,7 @@ namespace KT4_Arrays
 
             Spliter();
 
-            Task1Routine();
+            Routine();
 
             Spliter();
         }

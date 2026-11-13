@@ -8,12 +8,12 @@ namespace KT4_Arrays
 {
     internal class Task2FillArrayFromUserInput : SystemMethods
     {
-        private void Task2Routine()
+        private void Routine()
         {
             int arrayLength = LengthInput();
-            int[] userArray = CreateArray(arrayLength);
-            int[] filledUserArray = Fill(userArray);
-            PrintArray(filledUserArray);
+            int[] userArray = Create(arrayLength);
+            Fill(userArray);
+            Print(userArray);
         }
 
         private int LengthInput()
@@ -31,7 +31,7 @@ namespace KT4_Arrays
             return arrayLength;
         }
 
-        private int[] CreateArray(int arrayLength)
+        private int[] Create(int arrayLength)
         {
             int[] userArray = new int[arrayLength];
 
@@ -40,22 +40,19 @@ namespace KT4_Arrays
 
         private int[] Fill(int[] userArray)
         {
-            int[] filledUserArray = new int[userArray.Length];
-
             for (int i = 0; i < userArray.Length; i++)
             {
-
-                filledUserArray[i] = i;
+                userArray[i] = i;
             }
 
-            return filledUserArray;
+            return userArray;
         }
 
-        private void PrintArray(int[] filledUserArray)
+        private void Print(int[] userArray)
         {
-            for (int i = 0; i < filledUserArray.Length; i++)
+            for (int i = 0; i < userArray.Length; i++)
             {
-                Console.WriteLine(filledUserArray[i]);
+                Console.WriteLine(userArray[i]);
             }
         }
 
@@ -69,7 +66,7 @@ namespace KT4_Arrays
 
             Spliter();
 
-            Task2Routine();
+            Routine();
 
             Spliter();
         }
