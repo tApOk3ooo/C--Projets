@@ -4,14 +4,15 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{60A2799D-8F51-459A-A745-CCB86D2FE227}</ProjectGuid>
+    <ProjectGuid>{8E5B3A1D-4C2F-4F8A-9B12-7D3E6A5C1F90}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Inheritance</RootNamespace>
-    <AssemblyName>Inheritance</AssemblyName>
-    <TargetFrameworkVersion>v4.8.1</TargetFrameworkVersion>
+    <RootNamespace>KT5_Inheritance</RootNamespace>
+    <AssemblyName>KT5-Inheritance</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
