@@ -10,7 +10,7 @@ namespace KT5_Inheritance
     {
         public bool HasFur { get; private set; }
         private readonly string _sound;
-        public Mammal(string name, int age, string species, string typeOfEating, bool hasFur, string sound) : base(name, age, species, typeOfEating)
+        public Mammal(string name, int age, string species, FoodType typeOfEating, bool hasFur, string sound) : base(name, age, species, typeOfEating)
         {
             HasFur = hasFur;
             _sound = sound;

@@ -9,39 +9,56 @@ namespace KT5_Inheritance
     internal class Animal
     {
         public string Name { get; private set; }
-
-        public int Age  { get; private set; } 
+        public int Age { get; private set; }
         public string Species { get; private set; }
-
-        public string TypeOfEating { get; private set; }
-
-
-        public Animal(string name, int age , string species, string typeOfEating)
+        public FoodType TypeOfEating { get; private set; }
+        public enum FoodType
         {
-            if (Name != null)
+            Carnivore,
+            Herbivore,
+            Omnivore
+        }
+
+
+        public Animal(string name, int age, string species, FoodType typeOfEating)
+        {
+            if (name != null)
             {
                 Name = name;
             }
 
-            if (Age >= 0)
+            if (age >= 0)
             {
                 Age = age;
             }
 
-            if (Species != null)
+            if (species != null)
             {
                 Species = species;
             }
 
-            if (TypeOfEating != null)
-            {
-                TypeOfEating = typeOfEating;
-            }
+            TypeOfEating = typeOfEating;
         }
 
         public virtual void Eat()
         {
-            Console.WriteLine($"{Name} - ест {TypeOfEating}");
+            switch (TypeOfEating)
+            {
+                case FoodType.Carnivore:
+                    Console.WriteLine($"{Name} - ест мясо");
+                    break;
+
+                case FoodType.Herbivore:
+                    Console.WriteLine($"{Name} - ест растения");
+                    break;
+
+                case FoodType.Omnivore:
+                    Console.WriteLine($"{Name} - ест и мясо и растения");
+                    break;
+                default:
+                    Console.WriteLine($"{Name} - тип питания не указан");
+                    break;
+            }
         }
 
         public virtual void Sleep()
